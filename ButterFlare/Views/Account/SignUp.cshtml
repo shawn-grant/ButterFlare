@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "SignUp";
+}
+
+<style>
+    .input {
+        border-radius: 5px;
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .login-btn {
+        background-color: #ff0000;
+        border-radius: 5px;
+        padding: 5px;
+        width: 200px;
+    }
+    #err {
+        color: red;
+    }
+</style>
+<h2>Create An Account</h2>
+
+<form class="login-form" method="post" action="@Url.Action("CreateAccount", "Account")">
+    <input name="uname" class="input" type="text" placeholder="username" /><br />
+    <input name="email" class="input" type="email" placeholder="email" /><br />
+    <input name="password" class="input" type="password" placeholder="password" /><br />
+    <input name="confirmPassword"class="input" type="password" placeholder="confirm password" /><br />
+    <input class="login-btn" type="submit" value="Create Account" />
+</form>
+<br />
+<h4 id="err">@ViewBag.Error</h4>
+
+

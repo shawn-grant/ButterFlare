@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Profile";
+}
+
+<h2>Profile</h2>
+
+<input type="button"
+       value="Logout"
+       onclick="location.href='@Url.Action("Logout", "Account")'" />
+
+<h4>My Posts</h4>
+@if (ViewBag.Posts != null && ViewBag.Posts.Length > 0)
+{
+    foreach (var post in ViewBag.Posts)
+    {
+        string imreBase64Data = Convert.ToBase64String(post.image);
+        string imgDataURL = string.Format("data:image/png;base64,{0}", imreBase64Data);
+
+        <div class="post">
+            <img src="@imgDataURL" style="max-width:30%; max-height:30%" /><br />
+            <p>@post.caption</p>
+        </div>
+    }
+}
+else
+{
+    <h4>No Posts yet</h4>
+}
+
+
+

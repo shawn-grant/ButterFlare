@@ -1,0 +1,43 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+
+
+.new-post {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.post-input {
+    border: none;
+    width: 400px;
+    border: 2px solid #ff3535;
+    border-radius:10px;
+    padding: 4px;
+    margin: auto;
+    text-align:center; 
+}
+.post-btn{
+    width: 400px; 
+    background: #ff3535;
+    border-radius: 10px;
+    border: none;
+    padding: 4px;
+}

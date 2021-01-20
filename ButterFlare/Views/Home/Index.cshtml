@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Feed";
+}
+    <style>
+       
+        #err {
+            color: red;
+        }
+    </style>
+    <div>
+        <h3 style="text-align:center">New Post</h3><br />
+        <div class="new-post">
+            <form class="post-form" action="/Home/CreatePost" method="Post" enctype="multipart/form-data">
+                <input name="file" class="post-input" type="file" accept=".png,.jpg,.jpeg" /><br />
+                <textarea name="caption" class="post-input" placeholder="I'm feeling happy"></textarea><br />
+                <button type="submit" class="btn-primary post-btn">POST</button>
+            </form>
+        </div>
+        <h4 id="err">@ViewBag.Error</h4>
+
+        <h3>My Feed</h3>
+        @if (ViewBag.Posts != null && ViewBag.Posts.Length > 0)
+        {
+            foreach (var post in ViewBag.Posts)
+            {
+                string imreBase64Data = Convert.ToBase64String(post.image);
+                string imgDataURL = string.Format("data:image/png;base64,{0}", imreBase64Data);
+
+                <div class="post">
+                    <img src="@imgDataURL" style="max-width:30%; max-height:30%" /><br />
+                    <p>@post.caption</p>
+                </div>
+            }
+        }
+        else
+        {
+            <h4>No Posts yet</h4>
+        }
+
+    </div>

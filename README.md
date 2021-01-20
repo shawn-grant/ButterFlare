@@ -14,3 +14,16 @@ Just a simple project to learn basic CRUD in ASP.net
 - FormsAuthentication
 - Guid
 - Password hash + salting
+
+## Screenshots:
+
+Sign Up:
+![screenshot](screenshots/P2.png)
+Login:
+![screenshot](screenshots/P1.png)
+Profile:
+![screenshot](screenshots/P3.png)
+Feed:
+![screenshot](screenshots/P4.png)
+Feed cntd: 
+![screenshot](screenshots/P5.png)
